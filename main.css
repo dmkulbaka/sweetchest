@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Элементы a, у которых есть класс, сбрасываем дефолтные стили */
+a[class] {
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* montserrat-regular 400 - latin_cyrillic */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v24-latin_cyrillic-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/montserrat-v24-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v24-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/montserrat-v24-latin_cyrillic-regular.woff") format("woff"), url("../fonts/montserrat-v24-latin_cyrillic-regular.ttf") format("truetype"), url("../fonts/montserrat-v24-latin_cyrillic-regular.svg#Montserrat") format("svg");
+  /* Legacy iOS */
+}
+/* montserrat-500 - latin_cyrillic */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/montserrat-v24-latin_cyrillic-500.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/montserrat-v24-latin_cyrillic-500.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v24-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/montserrat-v24-latin_cyrillic-500.woff") format("woff"), url("../fonts/montserrat-v24-latin_cyrillic-500.ttf") format("truetype"), url("../fonts/montserrat-v24-latin_cyrillic-500.svg#Montserrat") format("svg");
+  /* Legacy iOS */
+}
+/* montserrat-700 - latin_cyrillic */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-v24-latin_cyrillic-700.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/montserrat-v24-latin_cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v24-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/montserrat-v24-latin_cyrillic-700.woff") format("woff"), url("../fonts/montserrat-v24-latin_cyrillic-700.ttf") format("truetype"), url("../fonts/montserrat-v24-latin_cyrillic-700.svg#Montserrat") format("svg");
+  /* Legacy iOS */
+}
+.page {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 150%;
+  color: #2e363e;
+}
+
+/* стартовая сетка flex в 1 колонку */
+.page {
+  min-width: 1920px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*  прижимаем футер к низу */
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  /* тоже что flex-grow: 1; */
+}
+
+/* ограничевающий контейнер */
+[class*=__container] {
+  width: 1210px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+/* Main Style */

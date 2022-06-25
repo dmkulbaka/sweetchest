@@ -1,0 +1,22 @@
+/* стартовая сетка flex в 1 колонку */
+.page {
+  min-width: 1920px; // yest vieport -- del
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  прижимаем футер к низу */
+.main {
+  flex: 1; /* тоже что flex-grow: 1; */
+}
+
+/* ограничевающий контейнер */
+[class*="__container"] {
+  width: 1210px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+/* Main Style */
